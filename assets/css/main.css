@@ -170,20 +170,11 @@ body {
 }
 
 
-.btn-back {
-  background: #e63939;
-  color: #333;
-}
-
 .btn-back:hover {
   transform: scale(1.05);
   background: #e63939;
 }
 
-
-.btn-back:hover {
-  background: #cc3333;
-}
 
 /* Stream Buttons */
 .stream-links {
@@ -202,20 +193,11 @@ body {
 }
 
 
-.btn-stream {
-  background: #ccc;
-  color: #333;
-}
-
 .btn-stream:hover, .btn-stream.active {
   background: #ff4d4d;
   transform: scale(1.05);
 }
 
-
-.btn-stream:hover,  .btn-stream.active {
-  background: #e63939;
-}
 
 /* Stream Dropdown */
 .stream-dropdown {
@@ -240,12 +222,6 @@ body {
 }
 
 
-.stream-dropdown .dropdown-menu {
-  background: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .stream-dropdown .dropdown-item {
   color: #fff;
   padding: 10px 16px;
@@ -253,19 +229,11 @@ body {
 }
 
 
-.stream-dropdown .dropdown-item {
-  color: #333;
-}
-
 .stream-dropdown .dropdown-item:hover {
   background: #ff4d4d;
   color: #fff;
 }
 
-
-.stream-dropdown .dropdown-item:hover {
-  background: #e63939;
-}
 
 .stream-dropdown .dropdown-item.disabled {
   color: #666;
@@ -273,10 +241,6 @@ body {
   cursor: default;
 }
 
-
-.stream-dropdown .dropdown-item.disabled {
-  color: #999;
-}
 
 /* Live Animation (for Live Now header only) */
 .live-animation {
@@ -412,11 +376,6 @@ body {
 }
 
 
-.event-timer .countdown {
-  color: #e63939;
-  text-decoration: none;
-}
-
 .event-timer .watch-button {
   color: #fff;
   text-decoration: none;
@@ -437,10 +396,6 @@ body {
   animation: pulse-badge 1.5s ease-in-out infinite;
 }
 
-
-.live-badge {
-  background: #e63939;
-}
 
 @keyframes pulse-badge {
   0% { transform: scale(1); opacity: 1; box-shadow: 0 0 5px rgba(255, 77, 77, 0.5); }
@@ -533,11 +488,6 @@ footer {
 }
 
 
-.pricing-plans .classic-card {
-  border: 2px solid #e63939;
-  background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
 
 .pricing-plans .classic-card:hover {
   transform: translateY(-10px);
@@ -545,9 +495,6 @@ footer {
 }
 
 
-.pricing-plans .classic-card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
 
 .pricing-plans .price {
   font-size: 2rem;
@@ -557,9 +504,6 @@ footer {
 }
 
 
-.pricing-plans .price {
-  color: #e63939;
-}
 
 .pricing-plans .price span {
   display: block;
@@ -568,9 +512,6 @@ footer {
 }
 
 
-.pricing-plans .price span {
-  color: #666;
-}
 
 .pricing-plans .duration {
   color: #999;
@@ -578,9 +519,6 @@ footer {
 }
 
 
-.pricing-plans .duration {
-  color: #666;
-}
 
 .payment-methods .method {
   display: flex;
@@ -621,10 +559,6 @@ footer {
 }
 
 
-.info-section .instructions li::before,
- .info-section .benefits li::before {
-  color: #e63939;
-}
 
 .admin-section {
   text-align: center;
@@ -640,9 +574,6 @@ footer {
 }
 
 
-.admin-section .contact-card {
-  background: #ccc;
-}
 
 .admin-section .contact-header {
   display: flex;
@@ -658,9 +589,6 @@ footer {
 }
 
 
-.admin-section .contact-icon i {
-  color: #e63939;
-}
 
 .admin-section .telegram-btn {
   display: flex;
@@ -679,9 +607,6 @@ footer {
 }
 
 
-.admin-section .telegram-btn:hover {
-  background: #cc3333;
-}
 
 .admin-section .support-text {
   margin-top: 15px;
@@ -701,10 +626,6 @@ footer {
 }
 
 
-.event-card .card {
-  background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
 
 .event-card .card:hover {
   transform: translateY(-8px);
@@ -713,10 +634,6 @@ footer {
 }
 
 
-.event-card .card:hover {
-  border-color: #e63939;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
 
 .event-card .card-body {
   padding: 12px;
@@ -835,10 +752,6 @@ footer {
 }
 
 
-.snow {
-  color: #ddd;
-}
-
 /* Event Timer in Live Page */
 .event-timer {
   display: flex;
@@ -852,11 +765,6 @@ footer {
   background: #222;
 }
 
-
-.event-timer {
-  color: #e63939;
-  background: #f5f5f5;
-}
 
 /* --- CHAT LAYOUT FIX --- */
 .chat-wrapper {
@@ -883,4 +791,4 @@ footer {
 
 @media (min-width: 992px) {
     .chat-wrapper { height: 600px !important; }
-       }
+  }
