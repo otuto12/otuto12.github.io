@@ -8,14 +8,10 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll from snow */
 }
 
-[data-bs-theme="dark"] body {
+
+body {
   background: #1a1a1a;
   color: #fff;
-}
-
-[data-bs-theme="light"] body {
-  background: #f5f5f5;
-  color: #333;
 }
 
 /* Top Bar */
@@ -29,9 +25,7 @@ body {
   padding: 10px 0;
 }
 
-[data-bs-theme="light"] .top-bar {
-  background: linear-gradient(90deg, #e63939, #f5f5f5);
-}
+
 
 .top-bar .container-fluid {
   display: flex;
@@ -51,12 +45,9 @@ body {
   text-align: center;
 }
 
-[data-bs-theme="dark"] .futbolx-brand {
-  color: #fff;
-}
 
-[data-bs-theme="light"] .futbolx-brand {
-  color: #333;
+.futbolx-brand {
+  color: #fff;
 }
 
 @keyframes glow {
@@ -72,11 +63,7 @@ body {
   border: none;
 }
 
-[data-bs-theme="light"] .btn-dark {
-  background: #fff;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Sidebar */
 .offcanvas {
@@ -86,42 +73,32 @@ body {
   transition: background-color 0.3s;
 }
 
-[data-bs-theme="dark"] .offcanvas {
+
+.offcanvas {
   background: #000 !important;
 }
 
-[data-bs-theme="light"] .offcanvas {
-  background: #fff !important;
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-}
 
 .offcanvas-header {
   border-bottom: 1px solid #333;
 }
 
-[data-bs-theme="light"] .offcanvas-header {
-  border-bottom: 1px solid #ccc;
-}
+
 
 .nav-link {
   transition: color 0.3s;
 }
 
-[data-bs-theme="dark"] .nav-link {
+
+.nav-link {
   color: #fff !important;
 }
 
-[data-bs-theme="light"] .nav-link {
-  color: #333 !important;
-}
 
 .nav-link:hover {
   color: #ff4d4d !important;
 }
 
-[data-bs-theme="light"] .nav-link:hover {
-  color: #e63939 !important;
-}
 
 .nav-item {
   margin-bottom: 10px;
@@ -140,9 +117,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.postimg.cc/8PRrvYw4/IMG-20241226-211229-430.jpg') center/cover no-repeat;
 }
 
-[data-bs-theme="light"] .hero-background {
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://i.postimg.cc/8PRrvYw4/IMG-20241226-211229-430.jpg') center/cover no-repeat;
-}
+
 
 .hero-background h1, .hero-background p {
   position: relative;
@@ -194,7 +169,8 @@ body {
   transition: transform 0.3s, background 0.3s;
 }
 
-[data-bs-theme="light"] .btn-back {
+
+.btn-back {
   background: #e63939;
   color: #333;
 }
@@ -204,7 +180,8 @@ body {
   background: #e63939;
 }
 
-[data-bs-theme="light"] .btn-back:hover {
+
+.btn-back:hover {
   background: #cc3333;
 }
 
@@ -224,7 +201,8 @@ body {
   transition: transform 0.3s, background 0.3s;
 }
 
-[data-bs-theme="light"] .btn-stream {
+
+.btn-stream {
   background: #ccc;
   color: #333;
 }
@@ -234,7 +212,8 @@ body {
   transform: scale(1.05);
 }
 
-[data-bs-theme="light"] .btn-stream:hover, [data-bs-theme="light"] .btn-stream.active {
+
+.btn-stream:hover,  .btn-stream.active {
   background: #e63939;
 }
 
@@ -260,7 +239,8 @@ body {
   width: 100%;
 }
 
-[data-bs-theme="light"] .stream-dropdown .dropdown-menu {
+
+.stream-dropdown .dropdown-menu {
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -272,7 +252,8 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-[data-bs-theme="light"] .stream-dropdown .dropdown-item {
+
+.stream-dropdown .dropdown-item {
   color: #333;
 }
 
@@ -281,7 +262,8 @@ body {
   color: #fff;
 }
 
-[data-bs-theme="light"] .stream-dropdown .dropdown-item:hover {
+
+.stream-dropdown .dropdown-item:hover {
   background: #e63939;
 }
 
@@ -291,7 +273,8 @@ body {
   cursor: default;
 }
 
-[data-bs-theme="light"] .stream-dropdown .dropdown-item.disabled {
+
+.stream-dropdown .dropdown-item.disabled {
   color: #999;
 }
 
@@ -326,15 +309,13 @@ body {
   100% { transform: rotate(0); opacity: 1; }
 }
 
-[data-bs-theme="dark"] .card {
+
+.card {
   background: linear-gradient(135deg, #333 0%, #222 100%);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-[data-bs-theme="light"] .card {
-  background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+
 
 .card:hover {
   transform: translateY(-5px) rotate(1deg);
@@ -352,15 +333,13 @@ body {
   background: inherit;
 }
 
-[data-bs-theme="dark"] .card-body {
+
+.card-body {
   background: #222;
   color: #fff;
 }
 
-[data-bs-theme="light"] .card-body {
-  background: #fff;
-  color: #333;
-}
+
 
 .card-title {
   font-size: 1.2rem;
@@ -397,28 +376,25 @@ body {
   padding: 0;
 }
 
-[data-bs-theme="dark"] .card-text {
+
+.card-text {
   background: #222;
   color: #fff;
 }
 
-[data-bs-theme="light"] .card-text {
-  background: #fff;
-  color: #333;
-}
+
 
 .event-tag {
   font-size: 0.9rem;
   text-decoration: none;
 }
 
-[data-bs-theme="dark"] .event-tag {
+
+.event-tag {
   color: #999;
 }
 
-[data-bs-theme="light"] .event-tag {
-  color: #666;
-}
+
 
 .event-timer {
   font-size: 0.9rem;
@@ -435,7 +411,8 @@ body {
   text-decoration: none;
 }
 
-[data-bs-theme="light"] .event-timer .countdown {
+
+.event-timer .countdown {
   color: #e63939;
   text-decoration: none;
 }
@@ -460,7 +437,8 @@ body {
   animation: pulse-badge 1.5s ease-in-out infinite;
 }
 
-[data-bs-theme="light"] .live-badge {
+
+.live-badge {
   background: #e63939;
 }
 
@@ -532,11 +510,8 @@ footer {
   border-top: 1px solid #333;
 }
 
-[data-bs-theme="light"] footer {
-  border-top: 1px solid #ccc;
-}
 
-/* VIP Page Specific Styles */
+
 .hero-section {
   padding: 3rem 0;
 }
@@ -557,7 +532,8 @@ footer {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-[data-bs-theme="light"] .pricing-plans .classic-card {
+
+.pricing-plans .classic-card {
   border: 2px solid #e63939;
   background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -568,7 +544,8 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-[data-bs-theme="light"] .pricing-plans .classic-card:hover {
+
+.pricing-plans .classic-card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -579,7 +556,8 @@ footer {
   color: #ff4d4d;
 }
 
-[data-bs-theme="light"] .pricing-plans .price {
+
+.pricing-plans .price {
   color: #e63939;
 }
 
@@ -589,7 +567,8 @@ footer {
   color: #999;
 }
 
-[data-bs-theme="light"] .pricing-plans .price span {
+
+.pricing-plans .price span {
   color: #666;
 }
 
@@ -598,7 +577,8 @@ footer {
   margin-bottom: 20px;
 }
 
-[data-bs-theme="light"] .pricing-plans .duration {
+
+.pricing-plans .duration {
   color: #666;
 }
 
@@ -640,8 +620,9 @@ footer {
   color: #ff4d4d;
 }
 
-[data-bs-theme="light"] .info-section .instructions li::before,
-[data-bs-theme="light"] .info-section .benefits li::before {
+
+.info-section .instructions li::before,
+ .info-section .benefits li::before {
   color: #e63939;
 }
 
@@ -658,7 +639,8 @@ footer {
   max-width: 500px;
 }
 
-[data-bs-theme="light"] .admin-section .contact-card {
+
+.admin-section .contact-card {
   background: #ccc;
 }
 
@@ -675,7 +657,8 @@ footer {
   color: #ff4d4d;
 }
 
-[data-bs-theme="light"] .admin-section .contact-icon i {
+
+.admin-section .contact-icon i {
   color: #e63939;
 }
 
@@ -695,7 +678,8 @@ footer {
   background: #e63939;
 }
 
-[data-bs-theme="light"] .admin-section .telegram-btn:hover {
+
+.admin-section .telegram-btn:hover {
   background: #cc3333;
 }
 
@@ -716,7 +700,8 @@ footer {
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
-[data-bs-theme="light"] .event-card .card {
+
+.event-card .card {
   background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -727,7 +712,8 @@ footer {
   border-color: #ff4d4d;
 }
 
-[data-bs-theme="light"] .event-card .card:hover {
+
+.event-card .card:hover {
   border-color: #e63939;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
@@ -848,7 +834,8 @@ footer {
   content: "snowflake";
 }
 
-[data-bs-theme="light"] .snow {
+
+.snow {
   color: #ddd;
 }
 
@@ -865,7 +852,8 @@ footer {
   background: #222;
 }
 
-[data-bs-theme="light"] .event-timer {
+
+.event-timer {
   color: #e63939;
   background: #f5f5f5;
 }
@@ -895,4 +883,4 @@ footer {
 
 @media (min-width: 992px) {
     .chat-wrapper { height: 600px !important; }
-                             }
+       }
