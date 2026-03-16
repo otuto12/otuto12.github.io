@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,8 +49,7 @@
       border: 1px solid rgba(255, 77, 77, 0.3);
       box-shadow: 0 15px 35px rgba(0,0,0,0.6);
     }
-    [data-bs-theme="dark"] .disclaimer-content { background: #121212; color: #e0e0e0; }
-    [data-bs-theme="light"] .disclaimer-content { background: #ffffff; color: #212529; }
+     .disclaimer-content { background: #121212; color: #e0e0e0; }
     
     .disclaimer-content p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
     .btn-understood {
@@ -137,7 +136,7 @@
     .event-grid a { text-decoration: none; }
     .card { width: 100%; max-width: 400px; margin: 0 auto; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border-radius: 10px; overflow: hidden; border: 2px solid transparent; }
     .card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); border-color: #ff4d4d; }
-    [data-bs-theme="light"] .card:hover { border-color: #e63939; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+     .card:hover { border-color: #e63939; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
     .card-img-top { height: 220px; object-fit: cover; }
     .card-body { padding: 1rem; }
     .card-title { font-size: 1.3rem; margin-bottom: 0.5rem; }
@@ -197,9 +196,6 @@
       <ul class="nav flex-column">
         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="https://discord.gg/CmRcPbBB2k">Discord</a></li>
-        <li class="nav-item">
-          <button id="themeToggle" class="nav-link btn btn-link" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
-        </li>
       </ul>
     </div>
   </div>
@@ -373,7 +369,7 @@
         const allCategoryData = await Promise.all(fetchPromises);
 
         const combined = {
-          success: true,
+          success: true;
           streams: allCategoryData.filter(d => d && d.success && Array.isArray(d.streams)).flatMap(d => d.streams || [])
         };
 
@@ -468,21 +464,6 @@
     }
 
     function initPage() {
-      const themeToggle = document.getElementById('themeToggle');
-      const htmlElement = document.documentElement;
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const defaultTheme = prefersDark ? 'dark' : 'light';
-      const currentTheme = localStorage.getItem('theme') || defaultTheme;
-      htmlElement.setAttribute('data-bs-theme', currentTheme);
-      if (themeToggle) {
-        themeToggle.innerHTML = currentTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-        themeToggle.addEventListener('click', () => {
-          const newTheme = htmlElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
-          htmlElement.setAttribute('data-bs-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          themeToggle.innerHTML = newTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-        });
-      }
       apiInstance = typeof Api !== 'undefined' ? new Api(`${window.location.origin}/api`) : { baseUrl: window.location.origin + '/api' };
       loadContent(apiInstance);
       countdown();
