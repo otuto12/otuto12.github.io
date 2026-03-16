@@ -343,10 +343,19 @@
         let attempts = 0;
         function attempt() {
           attempts++;
-          fetch(url, { signal: AbortSignal.timeout(5000) })
-            .then(res => res.ok ? res.json() : reject())
-            .then(data => { clearError(); resolve(data); })
-            .catch(error => attempts < maxRetries ? setTimeout(attempt, delay) : reject(error));
+          fetch(url, { signal: AbortSignal.timeout(2000) })  // Reduced timeout for faster failure detection
+            .then(res => {
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              return res.json();
+            })
+            .then(data => {
+              console.log('Fetched successfully:', url, data);
+              resolve(data);
+            })
+            .catch(error => {
+              console.error('Fetch error for', url, ':', error.message);
+              attempts < maxRetries ? setTimeout(attempt, delay) : reject(error);
+            });
         }
         attempt();
       });
@@ -377,17 +386,17 @@
           "golf",
           "others"
         ];
-        const fetchPromises = categoryNames.map(cat => fetchWithRetry(`\( {baseUrl}/ \){cat}.json`));
-        const allCategoryData = await Promise.allSettled(fetchPromises);
-        const successfulData = allCategoryData
-          .filter(result => result.status === 'fulfilled')
-          .map(result => result.value)
-          .filter(d => d && d.success && Array.isArray(d.streams));
+        console.log('Fetching categories:', categoryNames);
+        const fetchPromises = categoryNames.map(cat => fetchWithRetry(`\( {baseUrl}/ \){cat}.json`).catch(() => ({ success: true, streams: [] })));
+        const allCategoryData = await Promise.all(fetchPromises);
+        console.log('All fetched data:', allCategoryData);
 
         const combined = {
           success: true,
-          streams: successfulData.flatMap(d => d.streams || [])
+          streams: allCategoryData.filter(d => d && d.success && Array.isArray(d.streams)).flatMap(d => d.streams || [])
         };
+
+        console.log('Combined streams:', combined.streams);
 
         if (combined.streams.length === 0) {
           livecards.innerHTML = '<p>No streams available right now.</p>';
@@ -476,7 +485,10 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.card').forEach(card => observer.observe(card));
 
-      } catch (error) { livecards.innerHTML = '<p>Failed to load streams.</p>'; }
+      } catch (error) {
+        console.error('Load content error:', error);
+        livecards.innerHTML = '<p>Failed to load streams.</p>';
+      }
     }
 
     function initPage() {
@@ -531,4 +543,4 @@
     closeBtn.addEventListener('click', () => { pwaWrapper.style.display = 'none'; sessionStorage.setItem('pwaDismissed', 'true'); });
   </script>
 </body>
-</html>
+  </html>
