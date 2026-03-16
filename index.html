@@ -377,12 +377,16 @@
           "golf",
           "others"
         ];
-        const fetchPromises = categoryNames.map(cat => fetchWithRetry(`\( {baseUrl}/ \){cat}.json`).catch(() => ({ success: true, streams: [] })));
-        const allCategoryData = await Promise.all(fetchPromises);
+        const fetchPromises = categoryNames.map(cat => fetchWithRetry(`\( {baseUrl}/ \){cat}.json`));
+        const allCategoryData = await Promise.allSettled(fetchPromises);
+        const successfulData = allCategoryData
+          .filter(result => result.status === 'fulfilled')
+          .map(result => result.value)
+          .filter(d => d && d.success && Array.isArray(d.streams));
 
         const combined = {
           success: true,
-          streams: allCategoryData.filter(d => d && d.success && Array.isArray(d.streams)).flatMap(d => d.streams || [])
+          streams: successfulData.flatMap(d => d.streams || [])
         };
 
         if (combined.streams.length === 0) {
