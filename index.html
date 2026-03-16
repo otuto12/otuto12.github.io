@@ -470,7 +470,9 @@
     function initPage() {
       const themeToggle = document.getElementById('themeToggle');
       const htmlElement = document.documentElement;
-      const currentTheme = localStorage.getItem('theme') || 'dark';
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const defaultTheme = prefersDark ? 'dark' : 'light';
+      const currentTheme = localStorage.getItem('theme') || defaultTheme;
       htmlElement.setAttribute('data-bs-theme', currentTheme);
       if (themeToggle) {
         themeToggle.innerHTML = currentTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
@@ -532,4 +534,4 @@
     closeBtn.addEventListener('click', () => { pwaWrapper.style.display = 'none'; sessionStorage.setItem('pwaDismissed', 'true'); });
   </script>
 </body>
-  </html>
+</html>
