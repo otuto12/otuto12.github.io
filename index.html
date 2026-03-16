@@ -361,14 +361,14 @@
 
       try {
         const baseUrl = api.baseUrl || `${window.location.origin}/api`;
-        const catListUrl = baseUrl.endsWith('/') ? `\( {baseUrl}stream` : ` \){baseUrl}/stream`;
+        const catListUrl = `${baseUrl}/stream.json`;
         const catListRes = await fetchWithRetry(catListUrl);
         const categoryNames = catListRes.categories || [];
         const fetchPromises = categoryNames.map(cat => fetchWithRetry(`\( {baseUrl}/ \){cat}.json`).catch(() => ({ success: true, streams: [] })));
         const allCategoryData = await Promise.all(fetchPromises);
 
         const combined = {
-          success: true;
+          success: true,
           streams: allCategoryData.filter(d => d && d.success && Array.isArray(d.streams)).flatMap(d => d.streams || [])
         };
 
@@ -514,4 +514,4 @@
     closeBtn.addEventListener('click', () => { pwaWrapper.style.display = 'none'; sessionStorage.setItem('pwaDismissed', 'true'); });
   </script>
 </body>
-  </html>
+    </html>
